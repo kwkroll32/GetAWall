@@ -1,3 +1,4 @@
+<pre>
 GetAWall will retrieve a hot image URL from reddit, suitable for use as a wallpaper.
 
 usage: GetAWall.py [-h] [-w WIDTH] [-e HEIGHT] [-s SUBREDDIT] -c CREDENTIALS
@@ -26,4 +27,4 @@ feh $(python /home/karl/Tools/scripts/GetAWall.py -c /home/karl/Tools/scripts/re
 
 Setting a new wallpaper on login to i3wm (add the following to the i3 .config):
 exec_always --no-startup-id feh --bg-fill $(python GetAWall.py -c reddit_cred.json)
-
+<pre>
