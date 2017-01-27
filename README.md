@@ -14,17 +14,14 @@ optional arguments:
   -c CREDENTIALS, --credentials CREDENTIALS
                         txt file of reddit api credentials, json
 
-Todo: 
-  1. Add ability to poll more than one subreddit for a suitable image.
-  2. Pull fewer posts at once, then looping until a suitable image is found.
+Todo:
+1. Add ability to poll more than one subreddit for a suitable image.
+2. Pull fewer posts at once, then looping until a suitable image is found.
 
 Examples:
 Quickstart: 
 python GetAWall.py -c reddit_cred.json
 
-Combined with feh: 
-feh $(python /home/karl/Tools/scripts/GetAWall.py -c /home/karl/Tools/scripts/reddit_cred.json)
-
-Setting a new wallpaper on login to i3wm (add the following to the i3 .config):
+Setting a new wallpaper with feh on login to i3wm (add the following to the i3 .config):
 exec_always --no-startup-id feh --bg-fill $(python GetAWall.py -c reddit_cred.json)
 <pre>
