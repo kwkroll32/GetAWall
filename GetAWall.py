@@ -6,6 +6,7 @@ import argparse
 import urllib
 import cStringIO
 import json
+import random
 import praw
 from PIL import Image
 
@@ -74,11 +75,13 @@ def main():
     reddit = praw.Reddit(client_id=ra_id, client_secret=ra_sec,
                          user_agent='Python :GetAWall:v1.0 (by /u/kwkroll32)')
 
-    for submission in reddit.subreddit(args.subreddit).hot(limit=7):
+    semifinalists = []
+    for submission in reddit.subreddit(args.subreddit).hot(limit=15):
         width, height = getsize(submission.url)
         if qualifies(width, height, args.width, args.height):
-            print(submission.url)
-            return 0
+            semifinalists.append(submission.url)
+    print(random.choice(semifinalists))
+    return 0
 
 if __name__ == "__main__":
     main()
